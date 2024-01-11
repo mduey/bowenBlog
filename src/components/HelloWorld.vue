@@ -6,6 +6,10 @@ defineProps({
 })
 
 const count = ref(0)
+
+function test(){
+  console.log("test clicked")
+}
 </script>
 
 <template>
@@ -13,6 +17,9 @@ const count = ref(0)
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
+    <v-btn @click="test">
+  Button
+</v-btn>
     <p>
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
