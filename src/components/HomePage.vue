@@ -16,8 +16,7 @@ function test() {
   <div class="post">asfdasdfasdfasdfsadfasdf</div>
 
   <div class="post">
-    adfgererg789789789789789789789879766575 546456 456456456456456546 546 546
-    546456456456456456456546546546546456asdfsadfasdf
+    This is my page!
   </div>
 </template>
 
