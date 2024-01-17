@@ -14,6 +14,11 @@ function test() {
   <h1 style="margin-bottom: 4rem">duey.org</h1>
 
   <div class="post">asfdasdfasdfasdfsadfasdf</div>
+
+  <div class="post">
+    adfgererg789789789789789789789879766575 546456 456456456456456546 546 546
+    546456456456456456456546546546546456asdfsadfasdf
+  </div>
 </template>
 
 <style scoped>
