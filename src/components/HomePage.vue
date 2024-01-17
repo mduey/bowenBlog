@@ -11,13 +11,13 @@ function test() {
 </script>
 
 <template>
-  <h1 style="margin-bottom: 4rem">Duey.org</h1>
+  <h1 style="margin-bottom: 4rem">duey.org</h1>
 
   <div class="post">asfdasdfasdfasdfsadfasdf</div>
 </template>
 
 <style scoped>
 .post {
-  color: red;
+  color: rgb(21, 0, 255);
 }
 </style>
