@@ -2,10 +2,10 @@
   font-family: "Times New Roman", Times, serif, system-ui, Avenir, Helvetica,
     Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 500;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(27, 114, 28, 0.87);
   background-color: #e6e6e6;
 
   font-synthesis: none;
@@ -16,7 +16,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #000000;
   text-decoration: inherit;
 }
 a:hover {
@@ -38,13 +38,14 @@ h1 {
 }
 
 
-button:hover {
-  border-color: #646cff;
+/* button:hover {
+  border-color: #000000;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
+
 
 .card {
   padding: 2em;
@@ -57,15 +58,15 @@ button:focus-visible {
   /* text-align: center; */
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #000000;
   }
   button {
     background-color: #f9f9f9;
   }
-}
+} */

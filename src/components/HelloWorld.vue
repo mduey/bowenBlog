@@ -12,7 +12,7 @@ function test(){
 }
 </script>
 
-<template>
+<!-- <template>
   <h1>{{ msg }}</h1>
 
   <div class="card">
@@ -38,7 +38,7 @@ function test(){
     in your IDE for a better DX
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
-</template>
+</template> -->
 
 <style scoped>
 .read-the-docs {
