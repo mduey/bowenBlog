@@ -20,8 +20,10 @@ function test() {
 
 <div style="display: flex; flex-direction: column;">
     
-  <div class="date"> February 10th, 2024 </div>
-  
+  <div class="date"> February 11th, 2024 </div>
+x
+<img src="Federal-Odometer-Disclosure-Statement.png" width="100">
+  x
   <div class="boxed"> This was my first sewing project, a lightweight, 72 liter, backpacking backpack. I decided to take on this project because I wanted an upgrade from my previous pack. I had a lot of time and not a lot of money, so making my own was the best option. 
 
 If you do it right, the materials and pattern used to sew your own backpack will cost way less than most high-end backpacks on the market. 
