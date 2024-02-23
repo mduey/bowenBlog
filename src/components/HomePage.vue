@@ -22,7 +22,7 @@ function test() {
     
   <div class="date"> February 11th, 2024 </div>
 x
-<img src="../assets/abc.png">
+<img src="../assets/abc.png" width="100">
   x
   <div class="boxed"> This was my first sewing project, a lightweight, 72 liter, backpacking backpack. I decided to take on this project because I wanted an upgrade from my previous pack. I had a lot of time and not a lot of money, so making my own was the best option. 
 
