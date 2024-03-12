@@ -1,14 +1,14 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
 defineProps({
   msg: String,
-})
+});
 
-const count = ref(0)
+const count = ref(0);
 
-function test(){
-  console.log("test clicked")
+function test() {
+  console.log("test clicked");
 }
 </script>
 
