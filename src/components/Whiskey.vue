@@ -35,7 +35,7 @@
   background-color: #ffffffe6;
   text-align: right;
   font-size: x-large;
-  padding-right: 90px;
+  padding-right: 100px;
   text-shadow: 2px 2px rgb(214, 214, 214);
   border-radius: 18px;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
@@ -48,9 +48,20 @@
   grid-area: main-content;
 }
 .holy-grail-grid > .right-sidebar {
-  grid-area: right-sidebar;
-  padding-right: 90px;
-  text-align: right;
+  /* padding: 1rem; */
+  width: 80px;
+  height: 80px;
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(45deg);
+  /* grid-area: right-sidebar; */
+  text-align: center;
+  /* border-radius: 25px; */
+  background-color: #ffffffe6;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 .holy-grail-grid > .footer {
   grid-area: footer;
