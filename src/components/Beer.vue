@@ -1,32 +1,53 @@
-<script></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("upload-form");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    // Prevents the form from refreshing the page
+
+    const fileInput = document.getElementById("image-upload");
+    const textInput = document.getElementById("text-upload");
+
+    // Read the image file
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const imageURL = e.target.result;
+
+      // Create a new div to hold the image and text
+      const newContent = document.createElement("div");
+      newContent.innerHTML = `<img src="${imageURL}" alt="Uploaded Image" style="max-width: 100%;"><p>${textInput.value}</p>`;
+
+      // Append the new content to the main content area
+      document.querySelector(".main-content").appendChild(newContent);
+    };
+    reader.readAsDataURL(file); // Converts the image file to a URL that can be used in the src attribute of an img element
+  });
+});
+</script>
 
 <template>
   <div class="holy-grail-grid">
-    <header class="header"><a href="#" class="header">Duey.org</a></header>
-    <div class="logo-container">
-      <div class="dropdown">
-        <ul>
-          <li><a href="#">bing</a></li>
-          <li><a href="#">bong</a></li>
-          <li><a href="#">bung</a></li>
-        </ul>
-      </div>
-    </div>
+    <header class="header"></header>
     <main class="main-content">
-      We all live in a yellow submarine, a yellow submarine, a yellow submarine,
-      a yellow submarine, a yellow submarine, a yellow submarine, a yellow
-      submarine, a yellow submarine, a yellow submarine, a yellow submarine, a
-      yellow submarine, a yellow submarine, a yellow submarine, a yellow
-      submarine, a yellow submarine, a yellow submarine, a yellow submarine, a
-      yellow submarine, a yellow submarine, a yellow submarine, a yellow
-      submarine, a yellow submarine, a yellow submarine, a yellow submarine, a
-      yellow submarine, a yellow submarine, a yellow submarine, a yellow
-      submarine, a yellow submarine, a yellow submarine, a yellow submarine, a
-      yellow submarine, a yellow submarine,
+      <!-- The form to upload image and text -->
+      <form id="upload-form">
+        <label for="image-upload">Choose an image:</label>
+        <input type="file" id="image-upload" accept="image/*" required />
+        <br />
+        <label for="text-upload">Enter text:</label>
+        <textarea
+          id="text-upload"
+          style="border: 1px solid red; color: black"
+        ></textarea>
+        <br />
+        <button type="submit">Upload</button>
+      </form>
     </main>
     <aside class="left-sidebar"></aside>
     <aside class="right-sidebar"></aside>
-    <footer class="footer">Duey.org March 2024</footer>
+    <footer class="footer"></footer>
   </div>
 </template>
 
@@ -115,48 +136,18 @@
   }
 }
 
-* Existing styles for the grid layout and other elements */
-
-/* Logo and dropdown styles */
-.logo-container {
-  position: relative;
-  display: inline-block;
+/* Style for the form */
+#upload-form {
+  margin-bottom: 1rem;
 }
 
-.logo {
-  text-decoration: none;
-  color: inherit;
-  font-size: x-large;
-}
-
-.dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #ffffff;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  display: none; /* Initially hidden */
-}
-
-.dropdown ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.dropdown ul li {
-  padding: 10px;
-  text-align: center;
-}
-
-.dropdown ul li a {
-  color: #333;
-  text-decoration: none;
-}
-
-/* Show dropdown on hover */
-.logo-container:hover .dropdown {
+#upload-form label {
   display: block;
+  margin: 0.5rem 0;
+}
+
+#upload-form input,
+#upload-form button {
+  margin: 0.5rem 0;
 }
 </style>

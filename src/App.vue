@@ -1,6 +1,6 @@
 <script setup>
 // import HomePage from'./components/HomePage.vue'
-import Whiskey from "./components/Whiskey.vue";
+import Whiskey from "./components/Beer.vue";
 </script>
 
 <template>
