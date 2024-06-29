@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
           style="border: 1px solid red; color: black"
         ></textarea>
         <br />
-        <button type="submit">Upload</button>
+        <button type="submit">Submit</button>
       </form>
     </main>
     <aside class="left-sidebar"></aside>
