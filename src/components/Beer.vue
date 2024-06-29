@@ -4,25 +4,53 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    // Prevents the form from refreshing the page
-
     const fileInput = document.getElementById("image-upload");
+    const titleInput = document.getElementById("title-upload");
+    const dateInput = document.getElementById("date-upload");
     const textInput = document.getElementById("text-upload");
 
-    // Read the image file
-    const file = fileInput.files[0];
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const imageURL = e.target.result;
+    const files = fileInput.files;
+    const images = [];
 
-      // Create a new div to hold the image and text
+    Array.from(files).forEach((file, index) => {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        images.push(e.target.result);
+
+        if (index === files.length - 1) {
+          createContent(images);
+        }
+      };
+      reader.readAsDataURL(file);
+    });
+
+    function createContent(images) {
       const newContent = document.createElement("div");
-      newContent.innerHTML = `<img src="${imageURL}" alt="Uploaded Image" style="max-width: 100%;"><p>${textInput.value}</p>`;
+      newContent.innerHTML = `
+        <h3>${titleInput.value}</h3>
+        <h4>${dateInput.value}</h4>
+        <div class="image-slider">
+          <button class="prev-btn">&lt;</button>
+          <img src="${images[0]}" alt="Uploaded Image" style="max-width: 100%;">
+          <button class="next-btn">&gt;</button>
+        </div>
+        <p>${textInput.value}</p>`;
 
-      // Append the new content to the main content area
       document.querySelector(".main-content").appendChild(newContent);
-    };
-    reader.readAsDataURL(file); // Converts the image file to a URL that can be used in the src attribute of an img element
+
+      const imgElement = newContent.querySelector("img");
+      let currentIndex = 0;
+
+      newContent.querySelector(".prev-btn").addEventListener("click", () => {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+        imgElement.src = images[currentIndex];
+      });
+
+      newContent.querySelector(".next-btn").addEventListener("click", () => {
+        currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+        imgElement.src = images[currentIndex];
+      });
+    }
   });
 });
 </script>
@@ -31,12 +59,29 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="holy-grail-grid">
     <header class="header"></header>
     <main class="main-content">
-      <!-- The form to upload image and text -->
       <form id="upload-form">
-        <label for="image-upload">Choose an image:</label>
-        <input type="file" id="image-upload" accept="image/*" required />
+        <label for="image-upload">Choose up to 5 images:</label>
+        <input
+          type="file"
+          id="image-upload"
+          accept="image/*"
+          multiple
+          required
+        />
         <br />
-        <label for="text-upload">Enter text:</label>
+        <label for="title-upload">Enter title:</label>
+        <textarea
+          id="title-upload"
+          style="border: 1px solid red; color: black"
+        ></textarea>
+        <br />
+        <label for="date-upload">Enter date:</label>
+        <textarea
+          id="date-upload"
+          style="border: 1px solid red; color: black"
+        ></textarea>
+        <br />
+        <label for="text-upload">Enter content:</label>
         <textarea
           id="text-upload"
           style="border: 1px solid red; color: black"
@@ -139,15 +184,39 @@ document.addEventListener("DOMContentLoaded", () => {
 /* Style for the form */
 #upload-form {
   margin-bottom: 1rem;
+  border-radius: 10px;
+  font-family: "Arial", Times, serif, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  text-align: center;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
 }
 
 #upload-form label {
   display: block;
   margin: 0.5rem 0;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  font-family: "Arial", Times, serif, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  text-align: center;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
 }
 
 #upload-form input,
-#upload-form button {
+#upload-form button,
+#upload-form textarea {
   margin: 0.5rem 0;
+  border-radius: 10px;
+  font-family: "Arial", Times, serif, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  text-align: center;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
 }
 </style>

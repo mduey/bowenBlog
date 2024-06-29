@@ -2,28 +2,10 @@
 
 <template>
   <div class="holy-grail-grid">
-    <header class="header"><a href="#" class="header">Duey.org</a></header>
-    <div class="logo-container">
-      <div class="dropdown">
-        <ul>
-          <li><a href="#">bing</a></li>
-          <li><a href="#">bong</a></li>
-          <li><a href="#">bung</a></li>
-        </ul>
-      </div>
-    </div>
-    <main class="main-content">
-      We all live in a yellow submarine, a yellow submarine, a yellow submarine,
-      a yellow submarine, a yellow submarine, a yellow submarine, a yellow
-      submarine, a yellow submarine, a yellow submarine, a yellow submarine, a
-      yellow submarine, a yellow submarine, a yellow submarine, a yellow
-      submarine, a yellow submarine, a yellow submarine, a yellow submarine, a
-      yellow submarine, a yellow submarine, a yellow submarine, a yellow
-      submarine, a yellow submarine, a yellow submarine, a yellow submarine, a
-      yellow submarine, a yellow submarine, a yellow submarine, a yellow
-      submarine, a yellow submarine, a yellow submarine, a yellow submarine, a
-      yellow submarine, a yellow submarine,
-    </main>
+    <header class="header">
+      <button class=".maincontent">Duey.org</button>
+    </header>
+    <main class="main-content">Duey.org is under maintenence.</main>
     <aside class="left-sidebar"></aside>
     <aside class="right-sidebar"></aside>
     <footer class="footer">Duey.org March 2024</footer>
@@ -51,9 +33,9 @@
 .holy-grail-grid > .header {
   grid-area: header;
   background-color: #ffffffe6;
-  text-align: right;
+  text-align: left;
   font-size: x-large;
-  padding-right: 100px;
+  padding-left: 100px;
   text-shadow: 2px 2px rgb(214, 214, 214);
   border-radius: 18px;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
@@ -61,6 +43,7 @@
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
     rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  position: relative;
 }
 .holy-grail-grid > .main-content {
   grid-area: main-content;
@@ -91,6 +74,7 @@
 }
 .holy-grail-grid > .footer {
   grid-area: footer;
+  color: white;
 }
 
 /* tablet breakpoint */
@@ -113,50 +97,5 @@
       "left-sidebar main-content main-content right-sidebar"
       "footer footer footer footer";
   }
-}
-
-* Existing styles for the grid layout and other elements */
-
-/* Logo and dropdown styles */
-.logo-container {
-  position: relative;
-  display: inline-block;
-}
-
-.logo {
-  text-decoration: none;
-  color: inherit;
-  font-size: x-large;
-}
-
-.dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: #ffffff;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  display: none; /* Initially hidden */
-}
-
-.dropdown ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.dropdown ul li {
-  padding: 10px;
-  text-align: center;
-}
-
-.dropdown ul li a {
-  color: #333;
-  text-decoration: none;
-}
-
-/* Show dropdown on hover */
-.logo-container:hover .dropdown {
-  display: block;
 }
 </style>
