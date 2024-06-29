@@ -6,9 +6,10 @@
 }
 
 body {
-  background-image: url(assets/geologySlide.png);
+  background-color: #c32626;
+  /* background-image: url(assets/geologySlide.png);
   background-repeat: repeat;
-  background-size: 150px;
+  background-size: 150px; */
 }
 
 h1 {
